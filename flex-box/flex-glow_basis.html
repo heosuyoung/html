@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            width: 300px;
+            border: 2px solid black;
+        }
+        .item1, .item2, .item3,.box1,.box2,.box3{
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid black;
+        }
+        .item1{ 
+            /* grow는 비율을 더하는거고, 빈공간의 나머지를 나눠서 비율로 더하는 거임 */
+            /* width 300기준으로 1더해진거 */
+            flex-grow: 1;
+        }
+        .item2{
+            /* width 300기준으로 2더해진거 */
+            flex-grow: 2;
+        }
+        .item3{
+            /* width 300기준으로 3더해진거 */
+            flex-grow: 0;
+        }
+
+        .box1{
+            /* basis는 직접 픽셀 값을 주는 거임임 */
+            flex-basis: 100px;
+        }
+        .box2{
+            flex-basis: 200px;
+        }
+        .box3{
+            flex-basis: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">item1</div>
+        <div class="item2">item2</div>
+        <div class="item3">item3</div>
+    </div>
+    <!-- div.container>div.box&*3 -->
+    <div class="container">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+    </div>
+</body>
+</html>
+
