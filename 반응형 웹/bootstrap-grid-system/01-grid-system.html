@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <style>
+    .box {
+      border: 1px solid black;
+      background-color: lightblue;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 class="text-center">Basic</h2>
+  <div class="container">
+    <div class="row">
+      <!-- 똑같은 너비로 3등분 -->
+      <div class="box col">col</div>
+      <div class="box col">col</div>
+      <div class="box col">col</div>
+    </div>
+    <div class="row">
+      <div class="box col-4">col-4</div>
+      <div class="box col-4">col-4</div>
+      <div class="box col-4">col-4</div>
+    </div>
+    <div class="row">
+      <div class="box col-2">col-2</div>
+      <div class="box col-8">col-8</div>
+      <div class="box col-2">col-2</div>
+    </div>
+  </div>
+
+  <hr>
+<!-- Nesting(중첩):그리디 내부에 또 다른 그리디를 넣는 기법 -->
+  <h2 class="text-center">Nesting</h2>
+  <div class="container">
+    <div class="row">
+      <!-- 12칸그리드 -->
+      <div class="box col-4">col-4</div>
+      <div class="box col-8">
+        <div class="row">
+          <!-- 그리드 안에 12칸 -->
+          <div class="box col-6">col-6</div>
+          <div class="box col-6">col-6</div>
+          <!-- 그리드 안에 12칸칸 -->
+          <div class="box col-6">col-6</div>
+          <div class="box col-6">col-6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+<!-- offset이 왼쪽에 적용되는 이유: 정렬이 왼쪽에서 오른쪽으로 정렬렬 -->
+  <h2 class="text-center">Offset</h2>
+  <div class="container">
+    <div class="row">
+      <div class="box col-4">col-4</div>
+      <!-- 먼저 offset이 적용,4칸 건너뛰고 그리다 4칸차지 -->
+      <div class="box col-4 offset-4">col-4 offset-4</div>
+    </div>
+    <div class="row">
+      <!-- 먼저 offset이 적용,3칸 건너뛰고 그리드드 4칸차지 -->
+      <div class="box col-3 offset-3">col-3 offset-3</div>
+      <div class="box col-3 offset-3">col-3 offset-3</div>
+    </div>
+    <div class="row">
+      <!-- 먼저 offset이 적용,3칸 건너뛰고 그리드 6칸차지 -->
+      <div class="box col-6 offset-3">col-6 offset-3</div>
+    </div>
+  </div>
+
+  <hr>
+  <!-- gutter: 열 사이의 간격을 제어하는 Bootstrap -->
+<!-- gx:0 가로방향의 gutter(간격)을 제거  -->
+  <h2 class="text-center">Gutters(gx-0)</h2>
+  <div class="container">
+    <!-- gx-0안주면 1.5rem(24px)만큼 가운데가 띄어짐 -->
+    <div class="row gx-0">
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <h2 class="text-center">Gutters(gy-5)</h2>
+  <div class="container">
+    <!-- gy-5:gutter 세로방향으로 간격으로 5단계로 설정 -->
+     <!-- gy-1:0.25rem, gy-2:0.5rm gy-3:1rem 보다싶이 규칙성이 존재x -->
+    <div class="row gx-0 gy-5">
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+<!-- g-5:가로방향 세로방향 col-6모두 gutter(간격) 5단계 -->
+  <h2 class="text-center">Gutters(g-5)</h2>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
